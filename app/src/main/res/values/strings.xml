@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Footnote</string>
+    
+    <string name="availableTeams">Available teams</string>
+    <string name="addTeam">Add Team</string>
+    <string name="teams">Teams</string>
+    <string name="add">Add</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 </resources>
