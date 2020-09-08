@@ -2,8 +2,33 @@
 <resources>
     <color name="colorPrimary">#40CC00</color>
     <color name="colorPrimaryDark">#30A700</color>
-    <color name="colorAccent">#FED300</color>
+    <color name="colorAccent">#FEFA88</color>
+
+    <color name="white">#eeeeee</color>
 
     <color name="colorIcon">#FEFA88</color>
+    <color name="colorIconDark">#BEBA66</color>
     <color name="colorGreenDark">#278000</color>
+    <color name="colorGreenDarkest">#156000</color>
+
+    <color name="colorBackground">#251515</color>
+    <color name="colorPlayerBack">#301515</color>
+    <color name="colorPlayerNumBack">#401515</color>
+    <color name="colorWhiteBg">#755050</color>
+    <color name="colorWhiteDarkBg">#503030</color>
+
+    <color name="colorNumber">#eee000</color>
+    <color name="colorNumberDark">#222000</color>
+
+    <color name="colorGk">#ccaa00</color>
+    <color name="colorGkDark">#998000</color>
+
+
+    <color name="colorDf">#0099cc</color>
+    <color name="colorDfDark">#0070aa</color>
+    <color name="colorDfDarkest">#005080</color>
+
+    <color name="colorSt">#aa0000</color>
+    <color name="colorStDark">#700000</color>
+    <color name="colorStDarkest">#540000</color>
 </resources>

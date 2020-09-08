@@ -23,4 +23,12 @@
         <item name="color">@color/colorIcon</item>
     </style>
 
+    <style name="BottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetDialog</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
 </resources>

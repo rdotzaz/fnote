@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="380dp"
+    android:id="@+id/player_layout_container"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/player_name_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:hint="Name" />
+
+    <Spinner
+        android:id="@+id/position_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/player_name_dialog"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp" />
+
+    <EditText
+        android:id="@+id/age_player_dialog"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/position_dialog"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:hint="Age"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/ovr_player_dialog"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/position_dialog"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/age_player_dialog"
+        android:gravity="center"
+        android:hint="Ovr"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/height_player_dialog"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/position_dialog"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/ovr_player_dialog"
+        android:gravity="center"
+        android:hint="Height"
+        android:inputType="number" />
+
+
+    <EditText
+        android:id="@+id/number_dialog"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:hint="Number"
+        android:gravity="center"
+        android:layout_below="@+id/ovr_player_dialog"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="120dp" />
+
+    <Button
+        android:id="@+id/button_player_dialog"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/number_dialog"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_yell"
+        android:fontFamily="@font/signikasemibold"
+        android:text="@string/approve"
+        android:textColor="@color/colorBackground"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/delete_player_dialog"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/number_dialog"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/button_player_dialog"
+        android:background="@drawable/button_yell"
+        android:fontFamily="@font/signikasemibold"
+        android:text="@string/delete"
+        android:textColor="@color/colorBackground"
+        android:textSize="18dp" />
+
+</RelativeLayout>

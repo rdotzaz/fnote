@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".TeamActivity">
+
+    <TextView
+        android:id="@+id/name_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/colorIcon"
+        android:fontFamily="@font/changasemibold"
+        android:text="Season 1"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/getother_main"
+        android:layout_width="90sp"
+        android:layout_height="40sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="15dp"
+        android:text="Get"
+        android:textColor="@color/colorBackground"
+        android:background="@drawable/button_yell" />
+
+    <Button
+        android:id="@+id/sort_main"
+        android:layout_width="70sp"
+        android:layout_height="40sp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/getother_main"
+        android:background="@drawable/button_yell"
+        android:text="Sort"
+        android:textColor="@color/colorBackground" />
+
+    <TextView
+        android:id="@+id/coachinfo_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_team"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/changaregular"
+        android:text="@string/coach"
+        android:textColor="@color/colorIcon"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/coach_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_team"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/coachinfo_team"
+        android:fontFamily="@font/changaregular"
+        android:text="Gerard Garcia"
+        android:background="@drawable/button_yell"
+        android:textColor="@color/colorBackground"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:textSize="18sp" />
+
+
+    <Button
+        android:id="@+id/gk_add"
+        android:layout_width="60sp"
+        android:layout_height="30sp"
+        android:layout_below="@+id/coachinfo_team"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/gk_bg"
+        android:text="+"
+        android:textSize="18dp"/>
+
+    <Button
+        android:id="@+id/df_add"
+        android:layout_width="60sp"
+        android:layout_height="30sp"
+        android:layout_below="@+id/coachinfo_team"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/gk_add"
+        android:background="@drawable/df_bg"
+        android:text="+"
+        android:textSize="18dp"/>
+
+    <Button
+        android:id="@+id/mf_add"
+        android:layout_width="60sp"
+        android:layout_height="30sp"
+        android:layout_below="@+id/coachinfo_team"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/df_add"
+        android:background="@drawable/button_green"
+        android:text="+"
+        android:textSize="18dp"/>
+
+    <Button
+        android:id="@+id/st_add"
+        android:layout_width="60sp"
+        android:layout_height="30sp"
+        android:layout_below="@+id/coachinfo_team"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/mf_add"
+        android:background="@drawable/st_bg"
+        android:text="+"
+        android:textSize="18dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gkRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gk_add"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dfRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gkRV"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mfRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dfRV"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mfRV"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp" />
+
+</RelativeLayout>
