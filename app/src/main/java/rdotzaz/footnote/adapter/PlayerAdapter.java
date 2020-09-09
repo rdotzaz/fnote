@@ -66,23 +66,25 @@ public class PlayerAdapter extends RecyclerView.Adapter<MyVH>
         final TextView age = holder.itemView.findViewById(R.id.age_card);
         final CardView cardView = holder.itemView.findViewById(R.id.card_layout);
 
-        /*
+
         switch (field)
         {
+            case 0:
+                cardView.setBackground(ContextCompat.getDrawable(activity,R.drawable.gk_card));
+                break;
+
             case 1:
-                cardView.setBackgroundColor(ContextCompat.getColor(activity,R.color.colorDfDarkest));
+                cardView.setBackground(ContextCompat.getDrawable(activity,R.drawable.df_card));
                 break;
 
             case 2:
-                cardView.setBackgroundColor(ContextCompat.getColor(activity,R.color.colorGreenDarkest));
+                cardView.setBackground(ContextCompat.getDrawable(activity,R.drawable.mf_card));
                 break;
 
             case 3:
-                cardView.setBackgroundColor(ContextCompat.getColor(activity,R.color.colorStDarkest));
+                cardView.setBackground(ContextCompat.getDrawable(activity,R.drawable.st_card));
                 break;
         }
-
-         */
 
 
         num.setText(players.get(holder.getAdapterPosition()).getNumber().toString());
@@ -93,15 +95,15 @@ public class PlayerAdapter extends RecyclerView.Adapter<MyVH>
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                activity.showDialogP(players.get(holder.getAdapterPosition()),holder.getAdapterPosition());
             }
         });
 
         cardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                activity.showDialogP(players.get(holder.getAdapterPosition()),holder.getAdapterPosition());
-                return false;
+                activity.openPlayer(players.get(holder.getAdapterPosition()).getId(),players.get(holder.getAdapterPosition()).getTeamID());
+                return true;
             }
         });
     }

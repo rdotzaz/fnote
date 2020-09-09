@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="380dp"
+    android:background="@color/colorBackground"
     android:id="@+id/player_layout_container"
     android:padding="20dp">
 
@@ -14,8 +15,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
         android:gravity="center"
         android:hint="Name" />
 
@@ -27,7 +30,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp" />
+        android:layout_marginEnd="40dp"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/age_player_dialog"
@@ -38,6 +42,8 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:gravity="center"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
         android:hint="Age"
         android:inputType="number" />
 
@@ -50,6 +56,8 @@
         android:layout_marginTop="15dp"
         android:layout_toEndOf="@+id/age_player_dialog"
         android:gravity="center"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
         android:hint="Ovr"
         android:inputType="number" />
 
@@ -60,8 +68,10 @@
         android:layout_below="@+id/position_dialog"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
+        android:singleLine="true"
         android:layout_toEndOf="@+id/ovr_player_dialog"
         android:gravity="center"
+        android:imeOptions="actionNext"
         android:hint="Height"
         android:inputType="number" />
 
@@ -77,6 +87,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="10dp"
+        android:singleLine="true"
         android:layout_marginEnd="120dp" />
 
     <Button

@@ -3,6 +3,7 @@
     android:id="@+id/team_layout_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/colorBackground"
     android:layout_height="250dp"
     android:padding="20dp">
 
@@ -15,8 +16,10 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="15dp"
+        android:singleLine="true"
         android:gravity="center"
+        android:imeOptions="actionNext"
         android:hint="Name" />
 
     <EditText
@@ -27,8 +30,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="15dp"
-        android:layout_marginEnd="14dp"
+        android:singleLine="true"
+        android:layout_marginEnd="15dp"
         android:gravity="center"
+        android:imeOptions="actionNext"
         android:hint="@string/coachhint" />
 
     <Button
@@ -37,27 +42,14 @@
         android:layout_height="40dp"
         android:layout_below="@id/team_coach_dialog"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="120dp"
         android:background="@drawable/button_yell"
         android:fontFamily="@font/signikasemibold"
         android:text="@string/approve"
         android:textColor="@color/colorBackground"
-        android:textSize="18dp" />
-
-    <Button
-        android:id="@+id/delete_team_dialog"
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/team_coach_dialog"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_toEndOf="@+id/approve_team_dialog"
-        android:background="@drawable/button_yell"
-        android:fontFamily="@font/signikasemibold"
-        android:textColor="@color/colorBackground"
-        android:text="@string/delete"
         android:textSize="18dp" />
 
 </RelativeLayout>

@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -494,5 +495,12 @@ public class TeamActivity extends AppCompatActivity
         else return 3;
     }
 
+    public void openPlayer(final Long userID, final Long teamID)
+    {
+        Intent intent = new Intent(this,PlayerActivity.class);
+        intent.putExtra("user_id",userID);
+        intent.putExtra("team_id",teamID);
+        startActivity(intent);
+    }
 
 }

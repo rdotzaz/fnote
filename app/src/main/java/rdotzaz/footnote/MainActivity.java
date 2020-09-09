@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity
         final EditText name = (EditText) bottomSheet.findViewById(R.id.team_name_dialog);
         final EditText coach = (EditText) bottomSheet.findViewById(R.id.team_coach_dialog);
         final Button approve = (Button) bottomSheet.findViewById(R.id.approve_team_dialog);
-        final Button delete = (Button) bottomSheet.findViewById(R.id.delete_team_dialog);
 
         name.setText(teams.get(position).getName());
         coach.setText(teams.get(position).getCoach());
@@ -110,35 +109,32 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AskDialog dialog = new AskDialog(
-                        "Delete team",
-                        "Do you accept?",
-                        new IDialog() {
-                            @Override
-                            public void clickYes() {
-                                db.deleteTeam(teams.get(position).getId());
-                                teams.remove(teams.get(position));
-                                teamAdapter.notifyItemRemoved(position);
-                                rv.requestLayout();
-                                bottomSheetDialog.dismiss();
-                            }
-
-                            @Override
-                            public void clickNo() {
-
-                            }
-                        }
-                );
-                dialog.show(getSupportFragmentManager(),"delete dialog");
-            }
-        });
-
-        delete.setVisibility(View.VISIBLE);
         bottomSheetDialog.setContentView(bottomSheet);
         bottomSheetDialog.show();
+    }
+
+    public void deleteTeam(final Integer position)
+    {
+        AskDialog dialog = new AskDialog(
+                "Delete team",
+                "Do you accept?",
+                new IDialog() {
+                    @Override
+                    public void clickYes() {
+                        db.deleteTeam(teams.get(position).getId());
+                        teams.remove(teams.get(position));
+                        teamAdapter.notifyItemRemoved(position);
+                        rv.requestLayout();
+                        bottomSheetDialog.dismiss();
+                    }
+
+                    @Override
+                    public void clickNo() {
+
+                    }
+                }
+        );
+        dialog.show(getSupportFragmentManager(),"delete dialog");
     }
 
     public void showDialogT()
@@ -146,7 +142,6 @@ public class MainActivity extends AppCompatActivity
         final EditText name = (EditText) bottomSheet.findViewById(R.id.team_name_dialog);
         final EditText coach = (EditText) bottomSheet.findViewById(R.id.team_coach_dialog);
         final Button approve = (Button) bottomSheet.findViewById(R.id.approve_team_dialog);
-        final Button delete = (Button) bottomSheet.findViewById(R.id.delete_team_dialog);
 
         approve.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,7 +170,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        delete.setVisibility(View.GONE);
         bottomSheetDialog.setContentView(bottomSheet);
         bottomSheetDialog.show();
     }
@@ -186,4 +180,5 @@ public class MainActivity extends AppCompatActivity
         intent.putExtra("team_id",id);
         startActivity(intent);
     }
+
 }

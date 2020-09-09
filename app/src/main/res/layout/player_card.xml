@@ -14,21 +14,22 @@
         android:layout_height="40dp"
         android:text="25"
         android:gravity="center"
-        android:textSize="26dp"
-        android:textColor="@color/colorNumber"
+        android:textSize="24dp"
+        android:textColor="@color/colorIcon"
         android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/name_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="240dp"
-        android:text="Joao Carlos"
+        android:maxWidth="220dp"
+        android:text="Joao Carlos_a_b_c_d_e_f_e"
         android:singleLine="true"
         android:textStyle="bold"
-        android:layout_marginStart="55dp"
+        android:textColor="@color/white"
+        android:layout_marginStart="50dp"
         android:layout_gravity="center|left"
-        android:textSize="19dp"/>
+        android:textSize="18dp"/>
 
     <TextView
         android:layout_width="40dp"
@@ -38,9 +39,9 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:gravity="center"
-        android:textColor="@color/colorNumber"
+        android:textColor="@color/colorIcon"
         android:layout_gravity="right"
-        android:layout_marginEnd="10dp"/>
+        android:layout_marginEnd="25dp"/>
 
     <TextView
         android:layout_width="40dp"
@@ -50,8 +51,8 @@
         android:textSize="18dp"
         android:textStyle="bold"
         android:gravity="center"
-        android:textColor="@color/colorNumber"
+        android:textColor="@color/colorIcon"
         android:layout_gravity="right"
-        android:layout_marginEnd="55dp"/>
+        android:layout_marginEnd="85dp"/>
 
 </androidx.cardview.widget.CardView>

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:id="@+id/teamcard_layout"
-    android:layout_marginTop="7dp"
+    android:layout_height="70dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/team_back">
+    android:id="@+id/teamcard_layout"
+    android:layout_marginTop="5dp"
+    app:cardCornerRadius="5dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/name_teamcard"
         android:text="Season 1"
-        android:textSize="28sp"
+        android:maxLength="20"
+        android:textSize="26sp"
         android:textColor="@color/colorIcon"
         android:fontFamily="@font/signikabold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="25dp"/>
 
     <TextView
@@ -23,10 +24,30 @@
         android:layout_height="wrap_content"
         android:id="@+id/coach_teamcard"
         android:text="Coach: Gerard Garcia"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:fontFamily="@font/signikabold"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/colorIcon"
         android:layout_marginStart="25dp"/>
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:id="@+id/edit_teamcard"
+        android:layout_gravity="right|center"
+        android:background="@drawable/button_yell"
+        android:text="@string/edit"
+        android:layout_marginRight="90dp"
+        android:textColor="@color/colorBackground"/>
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:id="@+id/delete_teamcard"
+        android:layout_gravity="right|center"
+        android:background="@drawable/button_yell"
+        android:text="@string/delete"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/colorBackground"/>
 
 </androidx.cardview.widget.CardView>

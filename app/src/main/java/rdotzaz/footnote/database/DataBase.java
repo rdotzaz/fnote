@@ -126,7 +126,7 @@ public class DataBase implements IDatabase
         ArrayList<Player> players = new ArrayList<>();
         SQLiteDatabase db = helper.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from "
-                + PLAYER_TABLE_NAME,null);
+                + PLAYER_TABLE_NAME + " order by " + PLAYER_NUMBER + " ASC",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast())
         {
@@ -237,6 +237,5 @@ public class DataBase implements IDatabase
         db.close();
         return team;
     }
-
 
 }

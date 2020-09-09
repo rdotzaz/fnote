@@ -3,6 +3,7 @@ package rdotzaz.footnote.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -49,6 +50,10 @@ public class TeamAdapter extends RecyclerView.Adapter<MyVH>
         final TextView name = holder.itemView.findViewById(R.id.name_teamcard);
         final TextView coach = holder.itemView.findViewById(R.id.coach_teamcard);
         final CardView cardView = holder.itemView.findViewById(R.id.teamcard_layout);
+
+        final Button edit = holder.itemView.findViewById(R.id.edit_teamcard);
+        final Button delete = holder.itemView.findViewById(R.id.delete_teamcard);
+
         cardView.setBackgroundResource(R.drawable.team_back);
 
         name.setText(teams.get(holder.getAdapterPosition()).getName());
@@ -61,11 +66,17 @@ public class TeamAdapter extends RecyclerView.Adapter<MyVH>
             }
         });
 
-        cardView.setOnLongClickListener(new View.OnLongClickListener() {
+        edit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
+            public void onClick(View view) {
                 activity.showDialogT(holder.getAdapterPosition());
-                return true;
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.deleteTeam(holder.getAdapterPosition());
             }
         });
     }
