@@ -122,6 +122,10 @@ public class MainActivity extends AppCompatActivity
                     @Override
                     public void clickYes() {
                         db.deleteTeam(teams.get(position).getId());
+                        for(Player player : db.getPlayers(teams.get(position).getId()))
+                        {
+                            db.deletePlayer(player.getId());
+                        }
                         teams.remove(teams.get(position));
                         teamAdapter.notifyItemRemoved(position);
                         rv.requestLayout();

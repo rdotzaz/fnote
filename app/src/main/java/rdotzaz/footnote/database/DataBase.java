@@ -126,7 +126,8 @@ public class DataBase implements IDatabase
         ArrayList<Player> players = new ArrayList<>();
         SQLiteDatabase db = helper.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from "
-                + PLAYER_TABLE_NAME + " order by " + PLAYER_NUMBER + " ASC",null);
+                + PLAYER_TABLE_NAME + " where " + PLAYER_TEAMID + " = ? " + " order by " + PLAYER_NUMBER + " ASC",
+                new String[]{teamID.toString()});
         cursor.moveToFirst();
         while (!cursor.isAfterLast())
         {

@@ -48,6 +48,8 @@ public class TeamActivity extends AppCompatActivity
 
     BottomSheetDialog bottomSheetDialog;
     View bottomSheet;
+    BottomSheetDialog bottomSheetOtherDialog;
+    View bottomSheetOther;
 
     Integer pos;
 
@@ -95,7 +97,7 @@ public class TeamActivity extends AppCompatActivity
         RVs[3] = findViewById(R.id.stRV);
 
         playerAdapter = new PlayerAdapter[4];
-        for(int i = 0; i< 4; i++)
+        for(int i = 0; i < 4; i++)
         {
             playerAdapter[i] = new PlayerAdapter(this,db.getPlayers(teamID),i);
             RVs[i].setAdapter(playerAdapter[i]);
@@ -106,6 +108,9 @@ public class TeamActivity extends AppCompatActivity
 
         bottomSheetDialog = new BottomSheetDialog(this,R.style.BottomSheetDialog);
         bottomSheet = LayoutInflater.from(this).inflate(R.layout.player_dialog, (RelativeLayout) findViewById(R.id.player_layout_container));
+
+        bottomSheetOtherDialog = new BottomSheetDialog(this,R.style.BottomSheetDialog);
+        bottomSheetOther = LayoutInflater.from(this).inflate(R.layout.get_dialog, (RelativeLayout) findViewById(R.id.getdialog_layout));
 
         /////////////////////////////////////////////
 
@@ -151,6 +156,77 @@ public class TeamActivity extends AppCompatActivity
             }
         });
 
+        getOther.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showOtherDialog();
+            }
+        });
+
+    }
+
+    private void showOtherDialog()
+    {
+        final Spinner spinner = bottomSheetOther.findViewById(R.id.team_spinner_getdialog);
+        final Button approve = bottomSheetOther.findViewById(R.id.approve_getdialog);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        final ArrayList<Team> teams = db.getTeams();
+        String[] teamNames = getTeamNames(teams);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,teamNames);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+        spinner.setSelection(0);
+
+        approve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Long teamOtherID = teams.get(spinner.getSelectedItemPosition()).getId();
+
+                ArrayList<Player> players = db.getPlayers(teamOtherID);
+                for(Player p : players)
+                {
+                    Player newP = new Player(
+                            p.getName(),
+                            teamID,
+                            p.getAge(),
+                            p.getOvr(),
+                            p.getHeight(),
+                            p.getNumber(),
+                            p.getPosition(),
+                            p.getField()
+                    );
+                    Long idP = db.addPlayer(newP);
+                    newP.setId(idP);
+                    playerAdapter[p.getField()].getPlayers().add(newP);
+                }
+                for(int i = 0; i< 4; i++) RVs[i].requestLayout();
+                bottomSheetOtherDialog.dismiss();
+            }
+        });
+        bottomSheetOtherDialog.setContentView(bottomSheetOther);
+        bottomSheetOtherDialog.show();
+    }
+
+    private String[] getTeamNames(ArrayList<Team> teams)
+    {
+        String[] tab = new String[teams.size()];
+        for(int i = 0; i < teams.size(); i++)
+        {
+            tab[i] = teams.get(i).getName();
+        }
+        return tab;
     }
 
     public void showDialogP(final Player player, final Integer position)
@@ -438,6 +514,7 @@ public class TeamActivity extends AppCompatActivity
         bottomSheetDialog.setContentView(bottomSheet);
         bottomSheetDialog.show();
     }
+
 
     private String[] getPositions(final Integer field)
     {
