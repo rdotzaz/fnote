@@ -5,11 +5,7 @@
     <size android:width="300dp"
         android:height="40dp"/>
 
-    <gradient
-        android:startColor="@color/grayDark"
-        android:centerColor="@color/grayDark"
-        android:endColor="@color/colorGreenBack"
-        android:angle="0"/>
+    <solid android:color="@color/colorGreenBack"/>
 
     <corners android:radius="8sp"/>
 

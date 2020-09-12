@@ -1,6 +1,5 @@
 package rdotzaz.footnote.adapter;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +65,9 @@ public class PlayerAdapter extends RecyclerView.Adapter<MyVH>
         final TextView age = holder.itemView.findViewById(R.id.age_card);
         final CardView cardView = holder.itemView.findViewById(R.id.card_layout);
 
+        cardView.setBackgroundColor(ContextCompat.getColor(activity,R.color.grayDark));
 
+        /*
         switch (field)
         {
             case 0:
@@ -86,6 +87,9 @@ public class PlayerAdapter extends RecyclerView.Adapter<MyVH>
                 break;
         }
 
+         */
+
+
 
         num.setText(players.get(holder.getAdapterPosition()).getNumber().toString());
         name.setText(players.get(holder.getAdapterPosition()).getName());
@@ -102,7 +106,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<MyVH>
         cardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                activity.openPlayer(players.get(holder.getAdapterPosition()).getId(),players.get(holder.getAdapterPosition()).getTeamID());
+                activity.openPlayer(players.get(holder.getAdapterPosition()).getId());
                 return true;
             }
         });

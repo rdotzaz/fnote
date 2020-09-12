@@ -15,8 +15,7 @@ public class PlayerActivity extends AppCompatActivity
 {
     DataBase db;
     Player player;
-    Long id, teamID;
-    Team team;
+    Long id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +26,11 @@ public class PlayerActivity extends AppCompatActivity
         {
             id = getIntent().getLongExtra("user_id",1);
         }
-        if(getIntent().hasExtra("team_id"))
-        {
-            teamID = getIntent().getLongExtra("team_id",1);
-        }
 
 
         db = new DataBase(this);
 
         final TextView name = findViewById(R.id.name_player);
-        final TextView teamName = findViewById(R.id.team_name_player);
         final TextView number = findViewById(R.id.number_player);
         final TextView age = findViewById(R.id.year_player);
         final TextView ovr = findViewById(R.id.ovr_player);
@@ -46,10 +40,8 @@ public class PlayerActivity extends AppCompatActivity
         if(id!=-1)
         {
             player = db.getPlayer(id);
-            team = db.getTeam(teamID);
 
             name.setText(player.getName());
-            teamName.setText(team.getName());
             number.setText(player.getNumber().toString());
             age.setText(player.getAge().toString() + " years");
             ovr.setText(player.getOvr().toString());

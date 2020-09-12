@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/player_top_layout"
         android:layout_width="match_parent"
-        android:layout_height="200sp"
+        android:layout_height="170sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -21,15 +21,15 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/avatar_player"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="75sp"
+            android:layout_height="75sp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="163dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="163dp"
-            android:src="@drawable/icon240" />
+            android:src="@drawable/logo" />
 
         <TextView
             android:id="@+id/name_player"
@@ -41,18 +41,6 @@
             android:text="Jose Luis Garcia"
             android:fontFamily="@font/signikasemibold"
             android:textSize="20sp"
-            android:gravity="center"/>
-
-        <TextView
-            android:id="@+id/team_name_player"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/name_player"
-            android:layout_marginTop="0dp"
-            android:textColor="@color/colorIcon"
-            android:text="FC Barcelona"
-            android:fontFamily="@font/changasemibold"
-            android:textSize="16sp"
             android:gravity="center"/>
 
 
@@ -82,7 +70,7 @@
         android:layout_below="@+id/number_player"
         android:layout_alignParentStart="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         app:cardBackgroundColor="@color/colorStDarkest"
         app:cardCornerRadius="15sp">
 
@@ -116,7 +104,7 @@
         android:layout_below="@+id/number_player"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         app:cardBackgroundColor="@color/colorStDarkest"
         app:cardCornerRadius="15sp">
 

@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="380dp"
+    android:layout_height="420dp"
     android:background="@color/colorBackground"
     android:id="@+id/player_layout_container"
     android:padding="20dp">
@@ -21,6 +21,7 @@
         android:singleLine="true"
         android:gravity="center"
         android:hint="Name" />
+
 
     <Spinner
         android:id="@+id/position_dialog"

@@ -126,6 +126,7 @@
             android:text="+"
             android:textSize="18dp"/>
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/gkRV"
             android:layout_width="match_parent"

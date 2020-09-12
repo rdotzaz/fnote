@@ -242,7 +242,6 @@ public class TeamActivity extends AppCompatActivity
 
         delete.setVisibility(View.VISIBLE);
 
-
         name.setText(player.getName());
         age.setText(player.getAge().toString());
         ovr.setText(player.getOvr().toString());
@@ -489,7 +488,6 @@ public class TeamActivity extends AppCompatActivity
                         player.setId(playerID);
 
                         playerAdapter[field].getPlayers().add(player);
-                        //sortByNumber(playerAdapter[field].getPlayers());
                         RVs[field].requestLayout();
                         bottomSheetDialog.dismiss();
 
@@ -572,11 +570,10 @@ public class TeamActivity extends AppCompatActivity
         else return 3;
     }
 
-    public void openPlayer(final Long userID, final Long teamID)
+    public void openPlayer(final Long userID)
     {
         Intent intent = new Intent(this,PlayerActivity.class);
         intent.putExtra("user_id",userID);
-        intent.putExtra("team_id",teamID);
         startActivity(intent);
     }
 
