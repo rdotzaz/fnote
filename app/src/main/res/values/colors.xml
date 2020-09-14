@@ -12,6 +12,8 @@
     <color name="colorGreenDarkest">#156000</color>
     <color name="colorGreenBack">#053000</color>
 
+    <color name="colorPitch">#00421f</color>
+
     <color name="colorBackground">#000000</color>
     <color name="colorPlayerBack">#301515</color>
     <color name="colorPlayerNumBack">#401515</color>
