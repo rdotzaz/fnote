@@ -19,4 +19,6 @@
     <string name="coachhint">Coach</string>
     <string name="approve">Approve</string>
     <string name="selectTeam">Select team with players:</string>
+
+    <string name="draft">Draft</string>
 </resources>

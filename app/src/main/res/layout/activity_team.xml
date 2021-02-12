@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/colorBackground"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         tools:context=".TeamActivity">
@@ -173,8 +172,32 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="50dp"
             android:overScrollMode="never"/>
+
+        <Button
+            android:id="@+id/squad_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stRV"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/button_pink"
+            android:text="@string/draft"
+            android:textColor="@color/colorBackground" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/squad_button"
+            android:text="Player count: "
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="50dp"
+            android:padding="7dp"
+            android:id="@+id/teamsize_team"/>
 
     </RelativeLayout>
 

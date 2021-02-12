@@ -4,6 +4,14 @@
     <color name="colorPrimaryDark">#30A700</color>
     <color name="colorAccent">#FEFA88</color>
 
+    <color name="colorG">#00f2a6</color>
+    <color name="colorG1">#00d0a0</color>
+    <color name="colorG2">#00b0a0</color>
+
+    <color name="colorP">#f6007a</color>
+    <color name="colorP1">#d0007a</color>
+    <color name="colorP2">#a0007a</color>
+
     <color name="white">#eeeeee</color>
 
     <color name="colorIcon">#FEFA88</color>
@@ -12,7 +20,7 @@
     <color name="colorGreenDarkest">#156000</color>
     <color name="colorGreenBack">#053000</color>
 
-    <color name="colorPitch">#00421f</color>
+    <color name="colorPitch">#006631</color>
 
     <color name="colorBackground">#000000</color>
     <color name="colorPlayerBack">#301515</color>
