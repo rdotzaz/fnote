@@ -35,8 +35,8 @@ import rdotzaz.footnote.dialog.IDialog;
 public class TeamActivity extends AppCompatActivity
 {
     TextView nameTeam;
-    Button getOther, sortButton;
-    TextView coach;
+    Button getOther, sortButton, sqaudButton;
+    TextView coach, count;
 
     Button gk_add, df_add, mf_add, st_add;
     RecyclerView[] RVs;
@@ -84,6 +84,8 @@ public class TeamActivity extends AppCompatActivity
         getOther = findViewById(R.id.getother_main);
         coach = findViewById(R.id.coach_team);
         sortButton = findViewById(R.id.sort_main);
+        sqaudButton = findViewById(R.id.squad_button);
+        count = findViewById(R.id.teamsize_team);
 
         gk_add = findViewById(R.id.gk_add);
         df_add = findViewById(R.id.df_add);
@@ -95,6 +97,8 @@ public class TeamActivity extends AppCompatActivity
         RVs[1] = findViewById(R.id.dfRV);
         RVs[2] = findViewById(R.id.mfRV);
         RVs[3] = findViewById(R.id.stRV);
+
+
 
         playerAdapter = new PlayerAdapter[4];
         for(int i = 0; i < 4; i++)
@@ -163,6 +167,17 @@ public class TeamActivity extends AppCompatActivity
             }
         });
 
+        sqaudButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),SquadActivity.class);
+                intent.putExtra("team_id",teamID);
+                startActivity(intent);
+            }
+        });
+
+        count.setText("Player count: " + db.getPlayers(teamID).size());
+
     }
 
     private void showOtherDialog()
@@ -213,6 +228,7 @@ public class TeamActivity extends AppCompatActivity
                 }
                 for(int i = 0; i< 4; i++) RVs[i].requestLayout();
                 bottomSheetOtherDialog.dismiss();
+                count.setText("Player count: " +players.size() + 1);
             }
         });
         bottomSheetOtherDialog.setContentView(bottomSheetOther);
@@ -241,6 +257,7 @@ public class TeamActivity extends AppCompatActivity
         final Button delete = bottomSheet.findViewById(R.id.delete_player_dialog);
 
         delete.setVisibility(View.VISIBLE);
+
 
         name.setText(player.getName());
         age.setText(player.getAge().toString());

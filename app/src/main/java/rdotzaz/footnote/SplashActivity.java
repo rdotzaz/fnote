@@ -1,6 +1,7 @@
 package rdotzaz.footnote;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,4 +24,6 @@ public class SplashActivity extends AppCompatActivity {
         final Handler handler = new Handler();
         handler.postDelayed(r,1500);
     }
+
+
 }
