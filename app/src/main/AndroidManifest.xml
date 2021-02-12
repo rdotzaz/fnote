@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SquadActivity"></activity>
+        <activity android:name=".SquadActivity"/>
         <activity android:name=".PlayerActivity" />
         <activity android:name=".TeamActivity" />
         <activity
